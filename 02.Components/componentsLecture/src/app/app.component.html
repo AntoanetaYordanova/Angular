@@ -2,4 +2,14 @@
 
 <app-test></app-test>
 
-<input type="text" [value]="title">
+<input #input type="text" [placeholder]="title">
+<button (click)="changeTitle(input)">Change Title</button>
+
+<!-- <button (click)="buttonClickHandler()">Click me</button> -->
+
+<ul>
+    <li *ngFor="let user of users">name : {{user.name}}, age : {{user.age}}</li>
+</ul>
+
+<div *ngIf="showText">Some Text</div>
+<button (click)="toggleText($event)">{{showText ? 'Hide Text' : 'Show Text'}}</button>
