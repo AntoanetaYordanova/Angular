@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IUser } from './interfaces/user';
 
 @Component({
   selector: 'app-root',
@@ -23,9 +24,9 @@ export class AppComponent {
   }, 
 ]
 
-  ngAfterViewInit(): void{
-    debugger;
-  }
+  // ngAfterViewInit(): void{
+  //   debugger;
+  // }
 
   changeTitle(inputEl : HTMLInputElement){    
     this.title = inputEl.value;
@@ -40,5 +41,9 @@ export class AppComponent {
     console.log(ev);
     
     this.showText = !this.showText;
+  }
+
+  addNewUserHandler( newUser: IUser): void{
+    this.users.push(newUser)
   }
 }

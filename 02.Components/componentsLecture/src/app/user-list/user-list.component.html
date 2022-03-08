@@ -1,1 +1,13 @@
-<p>user-list works!</p>
+<div class="contaner">
+    <app-user-list-item *ngFor="let user of userArray" [user] = "user"></app-user-list-item>
+</div>
+
+
+<div>Add User:</div>
+
+<label for="name">Name:</label>
+<input type="text" id="name" #nameInput>
+<label for="age">Age:</label>
+<input type="text" id="age" #ageInput>
+
+<button (click)="addNewUser(nameInput, ageInput)">Add</button>

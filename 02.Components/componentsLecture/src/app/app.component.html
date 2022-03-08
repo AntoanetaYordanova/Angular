@@ -13,3 +13,10 @@
 
 <div *ngIf="showText">Some Text</div>
 <button (click)="toggleText($event)">{{showText ? 'Hide Text' : 'Show Text'}}</button>
+
+
+<div> List Items:</div>
+
+<div id="content">
+    <app-user-list [userArray]="users" (addUser)="addNewUserHandler($event)"></app-user-list>
+</div>
