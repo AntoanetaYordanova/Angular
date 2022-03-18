@@ -1,0 +1,5 @@
+<ul>
+    <app-user-li *ngFor="let user of users" [user] = 'user'></app-user-li>
+</ul>
+<app-loader *ngIf="!users"></app-loader>
+

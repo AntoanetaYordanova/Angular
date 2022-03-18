@@ -1,0 +1,9 @@
+<div *ngIf="user">
+<button [routerLink]="['/user-details', user.id + 1]">Next</button>
+  <div>Name: {{ user?.name }}</div>
+  <div>Phone: {{ user?.phone }}</div>
+  <div>Email: {{ user?.email }}</div>
+  <div>Company Name: {{ user?.company?.name }}</div>
+</div>
+<app-loader *ngIf="!user"></app-loader>
+<button type="button" [routerLink]="'/users'">Go Back</button>
