@@ -4,15 +4,15 @@
         <p>SoftUni forum is a place, where you can post your questions, comment, and discuss problems, which
             you have in your programming language or in your study in SoftUni.</p>
         <div class="logged">
-            <ul>
+            <ul *ngIf="!isLogged">
                 <li>
-                    <a href="/login">
+                    <a routerLink="/login">
                         <i class="fas fa-sign-in-alt"></i>
                         Login
                     </a>
                 </li>
                 <li>
-                    <a href="/register">
+                    <a routerLink="/register">
                         <i class="fas fa-user-plus"></i>
                         Register
                     </a>

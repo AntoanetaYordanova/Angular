@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faLock, faEnvelope, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
+import { UserService } from '../user.service';
 
 
 @Component({
@@ -7,15 +8,16 @@ import { faLock, faEnvelope, faPhone, faUser } from '@fortawesome/free-solid-svg
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
   faLock = faLock;
   faEnvelope = faEnvelope;
   faPhone = faPhone;
   faUser = faUser;
   
-  constructor() { }
+  constructor(private userService: UserService) { }
 
-  ngOnInit(): void {
+  register(email: string, password: string): void{
+    this.userService.login(email, password);
   }
 
 }

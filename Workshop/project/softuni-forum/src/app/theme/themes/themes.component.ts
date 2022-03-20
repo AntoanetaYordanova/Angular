@@ -10,9 +10,11 @@ import { IPost } from 'src/app/shared/interfaces';
 export class ThemesComponent{
 
   posts: IPost[] | undefined;
+  recentPosts: IPost[] | undefined;
 
   constructor(private contentService: ContentService) {
     this.fetchPosts();
+    this.fetchRecentPosts();
   }
 
   fetchPosts(): void {
@@ -20,4 +22,8 @@ export class ThemesComponent{
     this.contentService.loadPosts().subscribe(posts => this.posts = posts);
    }
 
+   fetchRecentPosts():void {
+     this.recentPosts = undefined;
+     this.contentService.loadFirstFivePosts().subscribe(posts => this.recentPosts = posts);
+   }
 }

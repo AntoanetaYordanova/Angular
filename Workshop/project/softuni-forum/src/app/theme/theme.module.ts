@@ -4,6 +4,8 @@ import { NewThemeComponent } from './new-theme/new-theme.component';
 import { ThemesComponent } from './themes/themes.component';
 import { ThemeComponent } from './theme/theme.component';
 import { ThemeRoutingModule } from './theme.routing.module';
+import { SharedModule } from '../shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -15,7 +17,9 @@ import { ThemeRoutingModule } from './theme.routing.module';
   ],
   imports: [
     CommonModule,
-    ThemeRoutingModule
+    ThemeRoutingModule,
+    SharedModule,
+    FontAwesomeModule
   ],
   exports: []
 })

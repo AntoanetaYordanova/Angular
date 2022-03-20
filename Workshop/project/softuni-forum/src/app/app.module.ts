@@ -10,12 +10,13 @@ import { HomeComponent } from './home/home.component';
 import { UserModule } from './user/user.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ThemeModule } from './theme/theme.module';
-import { ThemeComponent } from './theme/theme/theme.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

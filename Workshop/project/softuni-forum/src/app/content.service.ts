@@ -23,4 +23,8 @@ export class ContentService {
   loadFirstFivePosts(): Observable<IPost[]> {
     return this.http.get<IPost[]>(API_URL + '/api/posts?limit=5');
   }
+
+  loadTheme(id: string): Observable<ITheme> {
+    return this.http.get<ITheme>(API_URL + '/api/themes/' + id);
+  }
 }
