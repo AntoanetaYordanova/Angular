@@ -3,20 +3,23 @@
         <div class="header-background">
             <span>New Theme</span>
         </div>
-        <form>
+        <form #newThemeForm="ngForm" (ngSubmit)="submitTheme(newThemeForm)">
             <div class="new-theme-title">
                 <label for="themeName">Title <span class="red">*</span></label>
-                <input type="text" name="themeName" id="themeName">
-                <!-- <p class="error">
-                    Theme name is required.
-                </p>
-                <p class="error">
-                    Theme name must be at least 5 characters long.
-                </p> -->
+                <input type="text" name="themeName" #themeTitle="ngModel" ngModel id="themeName" required minlength="5">
+                <ng-container *ngIf="themeTitle.touched && themeTitle.invalid">
+                    <p class="error">
+                        Theme name is required.
+                    </p>
+                    <p class="error">
+                        Theme name must be at least 5 characters long.
+                    </p>
+                </ng-container>
+                
             </div>
             <div class="new-theme-content">
                 <label for="postText">Post <span class="red">*</span></label>
-                <textarea type="text" name="postText" id="postText" rows="8" class="height"></textarea>
+                <textarea type="text" name="postText" #themeText="ngModel" ngModel id="postText" rows="8" class="height"></textarea>
                 <!-- <p class="error">
                     The field with your post is required.
                 </p>
@@ -25,8 +28,8 @@
                 </p> -->
             </div>
             <div class="new-theme-buttons">
-                <button class="cancel">Cancel</button>
-                <button class="public">Post</button>
+                <button type="button" class="cancel" (click)="navigateToHome()">Cancel</button>
+                <button class="public" [disabled]="newThemeForm.invalid">Post</button>
             </div>
 
         </form>

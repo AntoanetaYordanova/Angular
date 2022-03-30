@@ -12,8 +12,8 @@ export class HeaderComponent {
     return this.userService.isLogged
   };
 
-  get getFirstName(): string | undefined{
-    return this.userService.user?.firstName
+  get getUsername(): string | undefined{
+    return this.userService.user?.username
   }
 
   constructor(

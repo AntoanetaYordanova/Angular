@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { AfterViewInit, Component, NgModule, OnInit, ViewChild } from '@angular/core';
+import { NgForm, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-templates-forms-demo',
@@ -10,6 +10,7 @@ export class TemplatesFormsDemoComponent implements OnInit, AfterViewInit {
   operatingSystem: string[] = ['Windows 10', 'Linux', 'Mac OS'];
 
   @ViewChild('laptopForm') laptopForm!:NgForm;
+  @ViewChild('proccessor') proccessor!:NgModel
 
   constructor() { }
 
@@ -18,7 +19,9 @@ export class TemplatesFormsDemoComponent implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit(): void {
-    console.log(this.laptopForm);   
+    console.log(this.laptopForm.value);
+    console.log(this.proccessor);
+       
   }
 
   onSubmit(): void{

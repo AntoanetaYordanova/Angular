@@ -6,6 +6,7 @@ import { ThemeComponent } from './theme/theme.component';
 import { ThemeRoutingModule } from './theme.routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CommonModule,
     ThemeRoutingModule,
     SharedModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   exports: []
 })

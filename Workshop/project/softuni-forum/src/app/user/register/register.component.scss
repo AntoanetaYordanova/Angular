@@ -26,7 +26,6 @@ form.login, form.register {
     flex: 0 1 100%;
     border: 1px solid;
     padding: 0.3em;
-    border-left: 0.3em solid green;
     border-top-right-radius: 0.3em;
     border-bottom-right-radius: 0.3em;
 }
@@ -73,6 +72,10 @@ form.login, form.register {
 
 /* errors  */
 
+.register input.ng-valid{
+    border-left: 0.3em solid green;
+}
+
 p.error {
     text-align: left;
     border-radius: 0.3em;
@@ -80,6 +83,6 @@ p.error {
     padding-top: 0;
 }
 
-.input-error {
-    border-left-color: red;
+.register input.ng-invalid.ng-touched {
+    border-left: 0.3em solid red;
 }
