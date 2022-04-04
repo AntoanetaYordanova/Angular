@@ -2,10 +2,11 @@ import { Inject, NgModule, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { RouterModule } from '@angular/router';
 import { LocalStorage } from './injections-tokens';
 import { AuthActivate } from '../guards/auth.activate';
+import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,11 @@ import { AuthActivate } from '../guards/auth.activate';
     FooterComponent
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: AuthInterceptor
+    },
     {
       provide: LocalStorage,
       useValue: window.localStorage,

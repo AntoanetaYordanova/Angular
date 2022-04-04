@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { faLock, faEnvelope, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 import { UserService } from '../user.service';
-import { emailValidator, passwordMatch, passwordMatchCheck } from '../util';
+import { emailValidator, passwordMatch } from '../util';
 
 
 @Component({

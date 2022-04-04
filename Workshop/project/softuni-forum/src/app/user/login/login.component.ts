@@ -41,11 +41,11 @@ export class LoginComponent {
     email: this.loginFormGroup.controls['email'].value,
     password: this.loginFormGroup.controls['password'].value,
    }
-  this.userService.login(body).subscribe({
-    next: () => {   
-      this.router.navigate([redirectUrl]);
-    },
-    error: (err) =>  this.errorMessage = err.error.message   
-  });
+  // this.userService.login(body).subscribe({
+  //   next: () => {   
+  //     this.router.navigate([redirectUrl]);
+  //   },
+  //   error: (err) =>  this.errorMessage = err.error.message   
+  // });
  }
 }
